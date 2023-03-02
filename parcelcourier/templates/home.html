@@ -72,9 +72,9 @@
           <h2 data-aos="fade-up">Your Lightning Fast Delivery Partner</h2>
           <p data-aos="fade-up" data-aos-delay="100">Parcelmasters connects people in over 220 countries and territories worldwide. Driven by the power of more than 380,000 employees, we deliver integrated services and tailored solutions for managing and transporting letters, goods and information.</p>
 
-          <form  class="form-search d-flex align-items-stretch mb-3" method = 'POST' action="{% url 'track' %}"  data-aos="fade-up" data-aos-delay="200">
+          <form  class="form-search d-flex align-items-stretch mb-3" method = 'get' action="{% url 'search' %}"  data-aos="fade-up" data-aos-delay="200">
             {% csrf_token %}
-            <input type="text" class="form-control" placeholder="Enter your tracking number" name = "searched" maxlength="5" required>
+            <input type="text" class="form-control" placeholder="Enter your tracking number" name = "q" maxlength="5" required>
             <button type="submit" class="btn btn-primary">Track</button>
           </form>
 
@@ -226,22 +226,12 @@
           <h4>Our Services</h4>
           <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Ship With Us</a></li>
            
           </ul>
         </div>
 
-        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-          <h4>Contact Us</h4>
-          <p>
-            57 Enikaro Strret <br>
-            Benin City 052<br>
-            Nigeria<br><br>
-            <strong>Phone:</strong> +234 81111 08787<br>
-            <strong>Email:</strong> holyjazzy@gmail.com<br>
-          </p>
-
-        </div>
+       
 
       </div>
     </div>
