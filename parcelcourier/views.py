@@ -9,21 +9,6 @@ def home(request):
     context = {}
     return render(request, 'home.html', context)
 
-# def track(request):
-#     if request.method == 'POST':
-      
-#             searched = request.POST['searched']
-       
-#             results = ShippingDetails.objects.filter(tracking_number__contains = searched)
-            
-#             return render(request, 'track.html', {'searched': searched, 'results': results} )
-
-#     else:
-#         return render(request, 'track.html')
-
-
-
-
 def search(request):
     if request.method == 'GET':
         query = request.GET.get('q')
@@ -44,7 +29,6 @@ def search(request):
 
 
 def newshipping(request):
-    
      form = ShippingDetailsForm()
      if request.method == 'POST':
         form = ShippingDetailsForm(request.POST)
