@@ -1,7 +1,7 @@
 # Rocket-Speed-Express
 
 ## Overview
-The Courier App is a simple courier management system built with Django, designed to streamline the courier service process. It provides a comprehensive platform for managing deliveries, tracking packages, and optimizing routes for efficient logistics.
+This Courier App is a simple courier management system built with Django, designed to streamline the courier service process. It provides a comprehensive platform for managing deliveries, tracking packages, and optimizing routes for efficient logistics.
 
 ## Features
 - Package Management: Easily create, track, and manage packages throughout the delivery process, including details such as sender, recipient, tracking number, and status updates.
