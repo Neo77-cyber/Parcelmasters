@@ -1,4 +1,4 @@
-# Rocket-Speed-Express
+# Parcelmasters
 
 ## Overview
 This Courier App is a simple courier management system built with Django, designed to streamline the courier service process. It provides a comprehensive platform for managing deliveries, tracking packages, and optimizing routes for efficient logistics.
