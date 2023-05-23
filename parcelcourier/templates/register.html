@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container my-5 text-center">
+    <style>
+        h5 {
+            color: red;
+        }
+        
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+    {% for message in messages %}
+        <h5>{{ message }}</h5>
+    {% endfor %}
+    
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h1 class="text-center">Register</h1>
+        <div class="form-group">
+            <label for="{{ form_name.id_for_label }}">Username:</label>
+            {{ form_name }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form_password1.id_for_label }}">Password:</label>
+            {{ form_password1 }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form_password2.id_for_label }}">Confirm Password:</label>
+            {{ form_password2 }}
+        </div>
+        <input type="submit" value="Get Started">
+    </form>
+</div>
+
+
+
+{% endblock %}

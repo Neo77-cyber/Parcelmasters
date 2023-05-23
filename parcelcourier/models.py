@@ -1,5 +1,6 @@
 from django.db import models
 from django_countries.fields import CountryField
+import random
 
 # Create your models here.
 STATUS_CHOICES = (
@@ -12,22 +13,29 @@ STATUS_CHOICES = (
 
 )
 
+DELIVERY_CHOICES = (
+    ('food', 'FOOD'),
+    ('phones', 'PHONES'),
+    ('computer accessories', 'COMPUTER ACCESSORIES'),
+    ('miscellaneous', 'MISCELLANEOUS')
+)
+
 
 class ShippingDetails(models.Model):
     tracking_number = models.IntegerField(blank=True, null=True)
-    weight_in_kg = models.IntegerField()
-    length_in_cm = models.IntegerField()
-    height_in_cm = models.IntegerField()
-    width_in_cm = models.IntegerField()
-    name_of_shipper = models.CharField(max_length=500)
-    Recievers_name = models.CharField(max_length=500)
-    product = models.CharField(max_length=500)
-    Origin = CountryField()
-    Destination = CountryField()
-    Departure_time = models.TimeField(blank=True, null=True)
-    departure_date = models.DateField(blank=True, null= True)
-    pickup_date = models.DateField(blank=True, null=True)
+    customer_name = models.CharField(max_length=200)
+    pickup_phone_number = models.IntegerField()
+    pickup_address = models.CharField(max_length=200)
+    recipient_name = models.CharField(max_length=200)
+    recipient_phone_number = models.IntegerField()
+    recipient_address = models.CharField(max_length=200)
+    category= models.CharField(max_length=200, choices=DELIVERY_CHOICES, default = 'food')
     status = models.CharField(max_length=100, choices=STATUS_CHOICES, default = 'awaiting payment', blank=True, null=True)
+
+    def save(self, *args, **kwargs):
+        if not self.tracking_number:
+            self.tracking_number = random.randint(100000, 999999)
+        super().save(*args, **kwargs)
 
     def __str__(self) -> str:
         return str(self.tracking_number)
