@@ -4,7 +4,11 @@
 This Courier App is a simple courier management system built with Django, designed to streamline the courier service process. It provides a comprehensive platform for managing deliveries, tracking packages, and optimizing routes for efficient logistics.
 
 ## Features
-- Package Management: Easily create, track, and manage packages throughout the delivery process, including details such as sender, recipient, tracking number, and status updates.
+1. User Registration: Users can register their accounts in the system. During the registration process, users will be assigned a unique tracking number that can be used to track their deliveries.
+
+2. Pricing Calculation: The system automatically calculates the pricing for each delivery based on the distance between the pickup and delivery locations. The pricing is determined using a predefined pricing model that takes into account the distance traveled.
+
+3. Distance Calculation: The system utilizes a distance calculation algorithm to determine the distance between the pickup and delivery locations. This ensures accurate pricing and allows users to estimate delivery times.
 
 
 ## Technologies Used
