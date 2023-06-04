@@ -1,7 +1,7 @@
 from django.db import models
 from django_countries.fields import CountryField
 import random
-
+from django.contrib.auth.models import User
 # Create your models here.
 STATUS_CHOICES = (
     ('awaiting payment', 'AWAITING PAYMENT'),
@@ -22,6 +22,7 @@ DELIVERY_CHOICES = (
 
 
 class ShippingDetails(models.Model):
+    username = models.OneToOneField(User, on_delete=models.CASCADE)
     tracking_number = models.IntegerField(blank=True, null=True)
     customer_name = models.CharField(max_length=200)
     pickup_phone_number = models.IntegerField()

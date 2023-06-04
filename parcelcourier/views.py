@@ -74,8 +74,11 @@ def shipwithus(request):
     if request.method == 'POST':
         form = ShippingDetailsForm(request.POST)
     if form.is_valid():
-            form.save()
-            return redirect('shipwithus') 
+            shipping_form = form.save(commit=False)
+            shipping_form.username = request.user
+            shipping_form.save()
+            form = ShippingDetailsForm()
+            
     return render (request, 'shipwithus.html', {'form': form})
 
       
@@ -83,4 +86,3 @@ def shipwithus(request):
     
 
 
-#   
